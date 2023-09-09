@@ -22,6 +22,12 @@ export const Card1 = [
     totalFoulCards: 653,
   },
 ];
+
+export const folderPath = [
+  { name: "England", link: "/folder1" },
+  { name: "Premier League", link: "/folder2" },
+];
+
 //--------------------------------------------------------------------------
 export const navLinks = [
   {

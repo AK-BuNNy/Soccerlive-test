@@ -7,8 +7,10 @@ import TopPlayers from "./TopPlayers";
 import Standings from "./Standings";
 import FeatureMatchCrd from "./FeatureMatchCrd";
 import Matches from "./Matches";
+import Test from "./Test";
 
 export {
+  Test,
   Matches,
   TopPlayers,
   FeatureMatchCrd,

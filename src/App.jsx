@@ -1,4 +1,5 @@
 import styles from "./style";
+import {folderPath} from "./constants";
 import {
   Header,
   Hero,
@@ -9,6 +10,7 @@ import {
   TopPlayers,
   Matches,
   Standings,
+  Test
 } from "./components";
 
 const App = () => (
@@ -58,17 +60,17 @@ const App = () => (
         <Matches />
       </div>
     </div>
+    <div className={`bg-white ${styles.flexCenter} items-center`}>
+      <div className={`${styles.boxWidth}`}>
+      <Test /></div>
+    </div>
 
     <div className={`bg-white ${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth}`}></div>
-      <Hero />
+      <div className={`${styles.boxWidth}`}>
+      <Hero /></div>
     </div>
   </div>
 );
 
-const folderPath = [
-  { name: "England", link: "/folder1" },
-  { name: "Premier League", link: "/folder2" },
-];
 
 export default App;
