@@ -1,36 +1,13 @@
 import React from "react";
 import { ManUnited, ManCity } from "../assets";
+import {standingsData} from "../constants";
 
-const standingsData = [
-  {
-    rank: 1,
-    img: ManCity,
-    team: "Manchester City",
-    played: 21,
-    won: 21,
-    drawn: 21,
-    lost: 21,
-    goals: 21,
-    points: 62,
-  },
-  {
-    rank: 2,
-    img: ManUnited,
-    team: "Manchester united",
-    played: 21,
-    won: 21,
-    drawn: 21,
-    lost: 21,
-    goals: 21,
-    points: 62,
-  },
-];
 
 function Standings() {
   return (
-    <div className="w-full h-[42rem] shadow-lg rounded-lg">
-      <div className="p-6 flex flex-row justify-between">
-        <p className="font-poppins text-[18px] text-indigo-950">Standings</p>
+    <div className="w-full h-[42rem] shadow-lg rounded-lg  relative ">
+      <div className="p-6 flex flex-row bg-white justify-between ">
+        <h2 className="font-poppins text-[18px] text-indigo-950">Standings</h2>
         <div className="flex space-x-4 text-md gap-10 ">
           <a href="" className=" border-primary  hover:border-b-[2px]">
             Overall
@@ -43,10 +20,10 @@ function Standings() {
           </a>
         </div>
       </div>
-      <div className="p-4">
-        <table className="w-full   border-gray-300">
-          <thead>
-            <tr className="bg-gray-100 text-[14px] font-poppins text-neutral-600">
+      <div className="absolute w-full h-[36rem] px-4  scroll-container">
+        <table className="relative w-full  flex-col">
+          <thead className="sticky top-0 w-full ">
+            <tr className="text-[14px] font-poppins bg-white  text-neutral-600">
               <th className="p-2 text-left">#</th>
               <th className="p-2 text-left">Team</th>
               <th className="p-2 text-center">Played</th>
@@ -59,7 +36,11 @@ function Standings() {
           </thead>
           <tbody>
             {standingsData.map((data, index) => (
-              <tr key={index} className="bg-white hover:bg-gray-100">
+              <tr key={index} className={`${
+                index % 2 === 0
+                  ? " bg-gray-100"
+                  : ` bg-white`
+              } hover:bg-gray-500`}>
                 <td className="p-2">{data.rank}</td>
                 <td className="p-2 text-left flex ">
                   {" "}
@@ -76,6 +57,7 @@ function Standings() {
             ))}
           </tbody>
         </table>
+
       </div>
     </div>
   );

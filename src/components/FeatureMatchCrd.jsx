@@ -2,7 +2,7 @@ import React from "react";
 import { ManCity, ManUnited } from "../assets";
 const FeatureMatchCrd = () => {
   return (
-    <div className="relative h-[190px] w-[390px] bg-primary p-4 border rounded-xl shadow-lg flex flex-col justify-center items-center text-center">
+    <div className="relative h-[190px] container max-w-[390px] bg-primary p-4 border rounded-xl shadow-lg flex flex-col justify-center items-center text-center">
       <div className=" absolute top-3 left-5 [font-family:'Source_Sans_Pro-SemiBold',_Helvetica] font-light text-white text-[22px] ">
         <span> Featured Event</span>
       </div>

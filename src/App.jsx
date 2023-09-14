@@ -2,7 +2,7 @@ import styles from "./style";
 import {folderPath} from "./constants";
 import {
   Header,
-  Hero,
+  PlayerStat,
   Navbar,
   Breadcrumb,
   Leaguecrd,
@@ -10,64 +10,57 @@ import {
   TopPlayers,
   Matches,
   Standings,
-  Test
+  Test,
+  StatCard,
+  PositionCard,
 } from "./components";
 
 const App = () => (
-  <div className="bg-dimWhite w-full overflow-hidden">
-    <div className={`${styles.flexCenter}`}>
+  <div className="bg-[#F5F5F5] w-full ">
+    <div className={`${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Header />
       </div>
     </div>
-    <div className={`bg-white ${styles.flexStart}`}>
+    <div className={`${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Navbar />
       </div>
     </div>
 
-    <div className={`bg-[#F5F5F5] ${styles.flexCenter}`}>
+    <div className={` ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Breadcrumb path={folderPath} />
       </div>
     </div>
-    <div
-      className={`bg-[#F5F5F5] ${styles.flexInlineCenter} lg:ml-[120px] gap-3 mt-5`}
-    >
-      <div className="flex-row justify-center">
-        <div className={`${styles.boxWidth}`}>
-          <Leaguecrd />
-        </div>
-      </div>
-      <div className={`bg-[#F5F5F5] ${styles.flexInlineStart}   `}>
-        <div className={`${styles.boxWidth}`}>
-          <FeatureMatchCrd />
-        </div>
+    <div className={` ${styles.flexStart}`}>
+      <div className={`flex ${styles.boxWidth} lg:max-xl:px-[120px] px-[3rem] justify-between items-center`}>
+        <Leaguecrd />
+        <FeatureMatchCrd />
       </div>
     </div>
-    <div className={`bg-white ${styles.flexCenter} lg:mx-[120px] mt-5`}>
+    <div className={` ${styles.flexStart} lg:mx-[120px] mt-5`}>
       <div className={`${styles.boxWidth}`}>
         <Standings />
       </div>
     </div>
-    <div className={`bg-white ${styles.flexCenter} lg:ml-[120px] mt-5`}>
-      <div className={`${styles.boxWidth}`}>
+    <div className={` ${styles.flexStart} w-full  mt-5`}>
+      <div className={`flex ${styles.boxWidth} lg:max-xl:px-[120px] px-[3rem] justify-between items-center`}>
+        <Matches />
+        <StatCard />
+        <PositionCard />
+      </div>
+    </div>
+    <div className={`${styles.flexStart} mt-5 `}>
+      <div className={`flex ${styles.boxWidth} lg:max-xl:px-[120px] px-[3rem] justify-between content-center`}>
+        <PlayerStat />
         <TopPlayers />
       </div>
     </div>
-    <div className={`bg-white ${styles.flexCenter} lg:ml-[120px] mt-5`}>
+    <div className={` ${styles.flexStart} lg:mx-[120px] mt-5`}>
       <div className={`${styles.boxWidth}`}>
-        <Matches />
+        <Standings />
       </div>
-    </div>
-    <div className={`bg-white ${styles.flexCenter} items-center`}>
-      <div className={`${styles.boxWidth}`}>
-      <Test /></div>
-    </div>
-
-    <div className={`bg-white ${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth}`}>
-      <Hero /></div>
     </div>
   </div>
 );

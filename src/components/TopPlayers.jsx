@@ -19,7 +19,7 @@ const playerData = [
 
 function TopPlayers() {
   return (
-    <div class="container  ">
+    <div className="container max-w-[392px]">
       <div className="w-[28rem] h-[40rem] shadow-lg rounded-lg p-6 relative ">
         <h1 className="p-4 text-lg font-semibold">Top Players</h1>
         {playerData.map((player, index) => (

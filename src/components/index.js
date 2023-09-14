@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import Hero from "./Hero";
+import PlayerStat from "./PlayerStat";
 import Header from "./Header";
 import Breadcrumb from "./Breadcrumb";
 import Leaguecrd from "./Leaguecrd";
@@ -8,15 +8,19 @@ import Standings from "./Standings";
 import FeatureMatchCrd from "./FeatureMatchCrd";
 import Matches from "./Matches";
 import Test from "./Test";
+import PositionCard from './PositionCard';
+import StatCard from './StatCard';
 
 export {
+  StatCard,
+  PositionCard,
   Test,
   Matches,
   TopPlayers,
   FeatureMatchCrd,
   Standings,
   Navbar,
-  Hero,
+  PlayerStat,
   Header,
   Breadcrumb,
   Leaguecrd,

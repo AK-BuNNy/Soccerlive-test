@@ -1,11 +1,24 @@
 import styles from "../style";
 import { logo, bell } from "../assets";
+import React ,{useState} from "react"
+
 
 const Header = () => {
+  // Define a state variable to track screen width
+  const [isSmallScreen, setIsSmallScreen] = React.useState(false);
+
+  // Function to check and update the screen size
+  const checkScreenSize = () => {
+    setIsSmallScreen(window.innerWidth <= 768); // Adjust the breakpoint as needed
+  };
+
+ 
+
   return (
-    <nav className="bg-primary relative  flex w-full justify-between items-center">
+    <nav className="bg-primary relative flex w-full justify-center">
+      <div className="flex  w-full md:max-xl:px-[120px] px-[3rem] justify-between items-center">
       {/* Left-aligned items */}
-      <div className="flex relative left-[20px] md:max-xl:left-[120px] items-center space-x-3 ">
+      <div className="flex relative items-center space-x-3">
         {/* Logo */}
         <img src={logo} alt="Soccerlive" className="w-[30px] h-[30px]" />
         {/* Logo Text */}
@@ -13,8 +26,8 @@ const Header = () => {
       </div>
 
       {/* Search Bar */}
-      <div className="flex justify-between items-center  ">
-        <div className="relative  text-white container mx-auto ">
+      <div className="flex items-center lg:mr-10">
+        <div className="relative flex-grow text-white container mx-auto ">
           <button type="submit" className="absolute left-0 top-0 mt-3 ml-4">
             <svg
               width="20"
@@ -38,7 +51,7 @@ const Header = () => {
       </div>
 
       {/* Right-aligned Notification Button */}
-      <div className="relative right-[20px] md:max-xl:right-[120px]  flex items-center">
+      <div className="relative  flex items-center">
         <button
           className={`py-2 px-6 font-poppins flex font-medium text-[18px] text-white bg-primarydim hover:bg-[#353B72] rounded-full outline-none `}
         >
@@ -48,8 +61,11 @@ const Header = () => {
           <span className="font-light font-sans-pro">Notification</span>
         </button>
       </div>
+      </div>
     </nav>
-  );
+
+
+);
 };
 
 export default Header;

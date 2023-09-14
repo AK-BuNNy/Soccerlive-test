@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Pcard, PLlogo, Goal, Court, FlagEngland, Arrowdown } from "../assets";
 import styles from "../style";
+import {years} from "../constants";
 const Leaguecrd = () => {
+  
   // Sample data for the card
   const leagueName = "Premier League";
   const leagueLogo = PLlogo; // Replace with the actual logo URL
@@ -16,12 +18,6 @@ const Leaguecrd = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedYear, setSelectedYear] = useState("2022-2023"); // Initialize with the default year
 
-  const years = [
-    "2019-2020",
-    "2020-2021",
-    "2021-2022",
-    "2022-2023", // Add more years as needed
-  ];
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,7 +27,7 @@ const Leaguecrd = () => {
     setSelectedYear(event.target.value);
   };
   return (
-    <div className="relative w-[800px] h-[190px]  p-4 border border-gray-300 rounded-md shadow-[0px_4px_12px_#8686861a] bg-white flex flex-col justify-center items-center text-center">
+    <div className="relative w-full max-w-[800px] h-[190px]  p-4 border  rounded-md  bg-white flex flex-col justify-center items-center text-center">
       <div className="p-2">
         {/*Leauge Logo, Countryname , conuntrylogo, flag */}
         <img
@@ -122,7 +118,7 @@ const Leaguecrd = () => {
               onClick={toggleDropdown}
               onMouseLeave={toggleDropdown}
             >
-              <div className="py-1" role="none">
+              <div className="py-1 h-[8rem]  scroll-container" role="none">
                 {years.map((year) => (
                   <button
                     key={year}

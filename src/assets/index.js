@@ -20,8 +20,10 @@ import Player2 from "./Player2.png";
 import DownArrowWh from "./DownArrowWh.svg";
 import LeftArrowWh from "./LeftArrowWh.svg";
 import RightArrowWh from "./RightArrowWh.svg";
+import DnArrowPrimary from "./DnArrowPrimary.svg";
 
 export {
+  DnArrowPrimary,
   RightArrowWh,
   LeftArrowWh,
   DownArrowWh,

@@ -11,9 +11,6 @@ export default {
         dimWhite: "rgba(255, 255, 255, 0.7)",
         dimBlue: "rgba(9, 151, 124, 0.1)",
       },
-      fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-      },
     },
     screens: {
       xs: "480px",
@@ -22,6 +19,12 @@ export default {
       md: "1060px",
       lg: "1200px",
       xl: "1700px",
+    },
+  },
+  extend: {
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
+      sans: ['"Source Sans Pro"', 'sans'],
     },
   },
   plugins: [],

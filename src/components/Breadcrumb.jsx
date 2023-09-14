@@ -1,7 +1,7 @@
 const Breadcrumb = ({ path }) => {
   return (
-    <nav className="bg-gray-200 p-2">
-      <div className="relative xs:left-[90px] md:left-[120px] max-w-screen-xl mx-auto">
+    <nav className=" py-2 px-[120px]  ">
+      <div className="relative bg-white py-2 rounded-lg px-4 max-w-screen-xl mx-auto">
         <ul className="flex space-x-2 items-center">
           <li>
             <a href="/">
@@ -14,7 +14,7 @@ const Breadcrumb = ({ path }) => {
               <a href={folder.link}>
                 <span
                   className={`${
-                    index === path.length - 1
+                    index % 2 === path.length - 1
                       ? "font-normal text-sm text-gray-400"
                       : `font-semibold text-sm text-[#372546]`
                   } text-lg`}

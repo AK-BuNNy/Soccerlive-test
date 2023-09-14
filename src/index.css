@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
 
 @tailwind base;
 @tailwind components;
@@ -6,9 +6,15 @@
 
 
 * {
-  scroll-behavior: smooth;
+  scroll-behavior:auto;
 }
 
+.body {
+  font-family: 'Source Sans 3', sans-serif;
+  /* Optional: Set other font properties like weight and style */
+  font-weight: normal; /* Regular */
+  font-style: normal; /* Normal */
+}
 
 
 .box-shadow {
@@ -20,33 +26,46 @@
   animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-@-webkit-keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(100px);
-    transform: translateY(100px);
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(100px);
-    transform: translateY(100px);
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
 
 .feature-card:hover {
   background: var(--black-gradient);
   box-shadow: var(--card-shadow);
 }
 
+.hidden-scrollbar {
+  /* Set the container's overflow property to auto */
+  overflow: auto;
+  scrollbar-color: transparent transparent; /* Hide scrollbar color */
+}
+/* Optional: Set a custom width for the scrollbar */
+.hidden-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
 
+.scroll-container {
+  overflow: auto;
+}
+
+/* Custom scrollbar container */
+.scroll-container::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+}
+
+/* Style the scrollbar track */
+.scroll-container::-webkit-scrollbar-track {
+  background-color: transparent; /* Track background color */
+}
+
+/* Style the scrollbar thumb */
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Thumb color */
+  border-radius: 6px; /* Round the corners of the thumb */
+  transition: opacity 0.2s !important; /* Add a transition for fade-in effect */
+  opacity: 0 !important ;/* Initially hide the scrollbar thumb */
+}
+
+/* Show the scrollbar thumb on hover */
+.scroll-container:hover::-webkit-scrollbar-thumb {
+  transition: opacity 0.2s;
+  opacity: 1;
+}
