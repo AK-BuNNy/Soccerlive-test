@@ -1,4 +1,4 @@
-import { ManUnited, ManCity,RightArrowWh, LeftArrowWh, DownArrowWh, } from "../assets";
+import { ManUnited, ManCity,RightArrowWh, LeftArrowWh, DownArrowWh, Player1, Player2,} from "../assets";
 //--------------------------------------------------------------------------
  const navItems = [
   "Football",
@@ -329,3 +329,121 @@ export const matches =  [
       ],
     },
   ];
+
+
+
+
+export const playerData = [
+  {
+    playerImage: Player1,
+    playerName: "Nathan Ake",
+    clubImage: ManCity,
+    rating: 9.1,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player2,
+    playerName: "Bruno Fernades",
+    clubImage: ManUnited,
+    rating: 8.7,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player1,
+    playerName: "Nathan Ake",
+    clubImage: ManCity,
+    rating: 9.1,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player2,
+    playerName: "Bruno Fernades",
+    clubImage: ManUnited,
+    rating: 8.7,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player1,
+    playerName: "Nathan Ake",
+    clubImage: ManCity,
+    rating: 9.1,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player2,
+    playerName: "Bruno Fernades",
+    clubImage: ManUnited,
+    rating: 8.7,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player1,
+    playerName: "Nathan Ake",
+    clubImage: ManCity,
+    rating: 9.1,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player2,
+    playerName: "Bruno Fernades",
+    clubImage: ManUnited,
+    rating: 8.7,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player1,
+    playerName: "Nathan Ake",
+    clubImage: ManCity,
+    rating: 9.1,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player2,
+    playerName: "Bruno Fernades",
+    clubImage: ManUnited,
+    rating: 8.7,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player1,
+    playerName: "Nathan Ake",
+    clubImage: ManCity,
+    rating: 9.1,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player2,
+    playerName: "Bruno Fernades",
+    clubImage: ManUnited,
+    rating: 8.7,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player1,
+    playerName: "Nathan Ake",
+    clubImage: ManCity,
+    rating: 9.1,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player2,
+    playerName: "Bruno Fernades",
+    clubImage: ManUnited,
+    rating: 8.7,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player1,
+    playerName: "Nathan Ake",
+    clubImage: ManCity,
+    rating: 9.1,
+    position: "midfielder",
+  },
+  {
+    playerImage: Player2,
+    playerName: "Bruno Fernades",
+    clubImage: ManUnited,
+    rating: 8.7,
+    position: "midfielder",
+  },
+];

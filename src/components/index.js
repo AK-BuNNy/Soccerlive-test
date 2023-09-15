@@ -10,8 +10,10 @@ import Matches from "./Matches";
 import Test from "./Test";
 import PositionCard from './PositionCard';
 import StatCard from './StatCard';
+import WinPercentageBar from './WinPercentageBar';
 
 export {
+  WinPercentageBar,
   StatCard,
   PositionCard,
   Test,

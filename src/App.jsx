@@ -59,6 +59,11 @@ const App = () => (
     </div>
     <div className={` ${styles.flexStart} lg:mx-[120px] mt-5`}>
       <div className={`${styles.boxWidth}`}>
+        <Test leftPercentage= {56} rightPercentage={30} />
+      </div>
+    </div>
+    <div className={` ${styles.flexStart} lg:mx-[120px] mt-5`}>
+      <div className={`${styles.boxWidth}`}>
         <Standings />
       </div>
     </div>
@@ -67,3 +72,4 @@ const App = () => (
 
 
 export default App;
+

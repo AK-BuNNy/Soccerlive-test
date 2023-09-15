@@ -1,27 +1,12 @@
 import React from "react";
 import { Player1, Player2, ManCity, ManUnited } from "../assets";
-const playerData = [
-  {
-    playerImage: Player1,
-    playerName: "Nathan Ake",
-    clubImage: ManCity,
-    rating: 9.1,
-    position: "midfielder",
-  },
-  {
-    playerImage: Player2,
-    playerName: "Bruno Fernades",
-    clubImage: ManUnited,
-    rating: 8.7,
-    position: "midfielder",
-  },
-];
+import {playerData }from "../constants"
 
 function TopPlayers() {
   return (
     <div className="container max-w-[392px]">
-      <div className="w-[28rem] h-[40rem] shadow-lg rounded-lg p-6 relative ">
-        <h1 className="p-4 text-lg font-semibold">Top Players</h1>
+      <div className="w-[28rem] h-[40rem] shadow-lg bg-white rounded-lg p-6 relative scroll-container">
+        <h1 className="p-4 text-[24px] font-semibold">Top Players</h1>
         {playerData.map((player, index) => (
           <div
             key={index}

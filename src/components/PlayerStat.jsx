@@ -25,38 +25,37 @@ const PlayerStat = () => {
           </button>
         </div>
       </div>
-      <div className="relative w-full max-w-[550px] flex flex-col">
-        <div className="flex px-6 sm:flex-row justify-between w-full">
-          {nav.map((navItem, index) => (
-            <div
-              key={index}
-              className={`cursor-pointer py-3 text-[12px] transform transition-transform`}
-              onClick={() => handleLinkClick(navItem)}
-              style={{
-                width: "100px", // Set a fixed width for all links
-              }}
-            >
-              <a
-                className={` py-3 w-full  ${activeLink === navItem ? 'font-bold' : ''}`}
-              >
-                {navItem}
-              </a>
-            </div>
-          ))}
-        </div>
-        <div className="absolute top-10 left-[27px] w-[498px] h-[3px] bg-[#F2f2f2]">
+      <div className="relative w-full flex max-w-[650px] flex-col items-center">
+      <div className="flex px-6 sm:flex-row justify-between w-full">
+        {nav.map((navItem, index) => (
           <div
+            key={index}
+            className={`cursor-pointer py-3 text-[12px] text-center transform transition-transform ${
+              activeLink === navItem ? "font-bold" : ""
+            }`}
+            onClick={() => handleLinkClick(navItem)}
             style={{
-              position: "absolute",
-              height: "3px",
-              backgroundColor: "#161B46",
-              width: `${100 / nav.length}%`, // Equal width for the active underline
-              bottom: "0",
-              left: `${nav.indexOf(activeLink) * (100 / nav.length)}%`,
-              transition: "left 0.3s ease",
+              flex: `1 ${100 / nav.length}%`, // Equal width for all links
             }}
-          ></div>
-        </div>
+          >
+            {navItem}
+          </div>
+        ))}
+      </div>
+      <div className="relative  w-[88%] h-[3px] bg-gray-300 rounded">
+        <div
+          style={{
+            position: "absolute",
+            height: "3px",
+            backgroundColor: "#161B46",
+            width: `${80 / nav.length}%`, // Equal width for the active underline
+            bottom: "0",
+            left: `${(nav.indexOf(activeLink) * (100 / nav.length)) + ((5 / nav.length)*nav.indexOf(activeLink))}%`,
+            transition: "left 0.3s ease",
+            borderRadius: "20px",
+          }}
+        ></div>
+      </div>
       </div>
       <div className="absolute w-full top-[10rem] h-[25rem] px-4  scroll-container">
         <table className="relative w-full  flex-col">
