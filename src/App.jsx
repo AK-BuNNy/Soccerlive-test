@@ -16,7 +16,7 @@ import {
 } from "./components";
 
 const App = () => (
-  <div className="bg-[#F5F5F5] w-full ">
+  <div className="bg-[#F6f6f6] w-full ">
     <div className={`${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Header />

@@ -101,17 +101,3 @@ const PlayerStat = () => {
 };
 
 export default PlayerStat;
-
-
-{/* <div className="w-full h-[3px] bg-[#F2f2f2]">
-        <div
-          style={{
-            position: "absolute",
-            height: "3px",
-            backgroundColor: "#161B46",
-            width: `${80 / nav.length}%`,
-            bottom: "0",
-            left: `${nav.indexOf(activeLink) * (100 / nav.length)}%`,
-          }}
-        ></div>
-        </div> */}

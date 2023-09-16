@@ -21,6 +21,7 @@ import DownArrowWh from "./DownArrowWh.svg";
 import LeftArrowWh from "./LeftArrowWh.svg";
 import RightArrowWh from "./RightArrowWh.svg";
 import DnArrowPrimary from "./DnArrowPrimary.svg";
+import footballPitchBackground from './footballPitchBackground.png';
 
 export {
   DnArrowPrimary,
@@ -46,4 +47,5 @@ export {
   Goal,
   Pcard,
   Court,
+  footballPitchBackground,
 };
