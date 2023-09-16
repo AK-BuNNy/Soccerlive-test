@@ -1,73 +1,44 @@
-import React, { useState } from "react";
-import styles from "../style";
-import { DnArrowPrimary } from "../assets";
-import "../index.css";
-import { standingsData } from "../constants";
+import React, { useState, useEffect } from "react";
 
-const nav = [
-  "Summary",
-  "Attack",
-  "Defense",
-  "Passing",
-  "Goal Keeper",
-];
+const Test = ({ TeamAPercentage, TeamBPercentage }) => {
+  const [leftWidth, setLeftWidth] = useState(0);
+  const [rightWidth, setRightWidth] = useState(0);
 
-const Test = () => {
-  const [activeLink, setActiveLink] = useState(nav[0]);
+  useEffect(() => {
+    if (TeamAPercentage >= 0 && TeamAPercentage <= 100) {
+      setLeftWidth(TeamAPercentage);
+    }
 
-  const handleLinkClick = (nav) => {
-    setActiveLink(nav);
-  };
+    if (TeamBPercentage >= 0 && TeamBPercentage <= 100) {
+      setRightWidth(TeamBPercentage);
+    }
+  }, [TeamAPercentage, TeamBPercentage]);
+
+  const spacePercentage = 100 - TeamAPercentage - TeamBPercentage;
 
   return (
-    <div className="relative w-full flex flex-col items-center">
-      <div className="flex px-6 sm:flex-row justify-between w-full">
-        {nav.map((navItem, index) => (
+    <div className=" flex flex-col justify-between items-center h-[5rem]">
+      <div className="text-[1rem] font-bold text-primary">Shots on Goal</div>
+      <div className="relative grid grid-cols-3 w-[98%] bg-slate-500">
+        <div className="absolute bottom-1 left-0 transform -translate-x-1/2 text-[14px] text-primary font-semibold">
+          {TeamAPercentage}
+        </div>
+        <div className="absolute bottom-1 left-full transform -translate-x-1/2 text-[14px] text-primary font-semibold">
+          {TeamBPercentage}
+        </div>
+        <div className="absolute justify-self-center w-[90%] bottom-0 h-6 bg-[#b3b3b3] rounded-full">
           <div
-            key={index}
-            className={`cursor-pointer py-3 text-[12px] text-center transform transition-transform ${
-              activeLink === navItem ? "font-bold" : ""
-            }`}
-            onClick={() => handleLinkClick(navItem)}
-            style={{
-              flex: `1 ${100 / nav.length}%`, // Equal width for all links
-            }}
-          >
-            {navItem}
-          </div>
-        ))}
-      </div>
-      <div className="relative  w-[90%] h-[3px] bg-gray-300 rounded">
-        <div
-          style={{
-            position: "absolute",
-            height: "3px",
-            backgroundColor: "#161B46",
-            width: `${80 / nav.length}%`, // Equal width for the active underline
-            bottom: "0",
-            left: `${(nav.indexOf(activeLink) * (100 / nav.length)) + ((5 / nav.length)*nav.indexOf(activeLink))}%`,
-            transition: "left 0.3s ease",
-            borderRadius: "20px",
-          }}
-        ></div>
+            className="absolute bottom-0 right-1/2 h-6 bg-primary rounded-l-full"
+            style={{ width: `${leftWidth / 2}%` }}
+          ></div>
+          <div
+            className="absolute bottom-0  left-1/2 h-6 bg-[#15BE65] rounded-r-full"
+            style={{ width: `${rightWidth / 2}%` }}
+          ></div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Test;
-
-{
-  /* <div className="w-full h-[3px] bg-[#F2f2f2]">
-        <div
-          style={{
-            position: "absolute",
-            height: "3px",
-            backgroundColor: "#161B46",
-            width: `${80 / nav.length}%`,
-            bottom: "0",
-            left: `${nav.indexOf(activeLink) * (100 / nav.length)}%`,
-          }}
-        ></div>
-        </div> */
-}

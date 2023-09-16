@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   RightArrowWh,
   LeftArrowWh,
@@ -12,11 +12,28 @@ import { WinPercentageBar } from ".";
 const nav = ["Match Details", "Lineups", "Standings"];
 
 const StatCard = () => {
+  const TeamAPercentage = 90; //just passing data here for progress bars
+  const TeamBPercentage = 30; //just passing data here for progress bars
   const [activeLink, setActiveLink] = useState(nav[0]);
 
   const handleLinkClick = (nav) => {
     setActiveLink(nav);
   };
+
+  const [leftWidth, setLeftWidth] = useState(0);
+  const [rightWidth, setRightWidth] = useState(0);
+
+  useEffect(() => {
+    if (TeamAPercentage >= 0 && TeamAPercentage <= 100) {
+      setLeftWidth(TeamAPercentage);
+    }
+
+    if (TeamBPercentage >= 0 && TeamBPercentage <= 100) {
+      setRightWidth(TeamBPercentage);
+    }
+  }, [TeamAPercentage, TeamBPercentage]);
+
+  const spacePercentage = 100 - TeamAPercentage - TeamBPercentage;
 
   return (
     <div className="relative container flex flex-col items-center min-w-[21rem] w-[392px] h-[45rem] bg-white p-2 border rounded-xl shadow-lg  ">
@@ -89,22 +106,33 @@ const StatCard = () => {
       <div className="flex justify-center w-full h-[4rem] bg-[#f6f6f6] rounded ">
         <div className=" flex gap-20  items-center rounded">
           <div className="flex flex-row gap-2">
-            <img
-              src={ManUnited}
-              className="w-8"
-            />
-            <div className=" font-semibold text-[#161b46] ">
-              Liverpool
-            </div>
+            <img src={ManUnited} className="w-8" />
+            <div className=" font-semibold text-[#161b46] ">Liverpool</div>
           </div>
           <div className="flex flex-row  gap-2">
-            <div className=" font-semibold text-[#161b46] ">
-              Man United
-            </div>
-            <img
-              src={ManUnited}
-              className="w-7 "
-            />
+            <div className=" font-semibold text-[#161b46] ">Man United</div>
+            <img src={ManUnited} className="w-7 " />
+          </div>
+        </div>
+      </div>
+      <div className=" flex flex-col w-full px-6 justify-between items-center h-[3rem]">
+        <div className="text-[14px] font-bold text-primary">Shots on Goal</div>
+        <div className="relative grid grid-cols-3 w-[98%] bg-slate-500">
+          <div className="absolute bottom-[-4px] left-0 transform -translate-x-1/2 text-[14px] text-primary font-semibold">
+            {TeamAPercentage}
+          </div>
+          <div className="absolute bottom-[-4px] left-full transform -translate-x-1/2 text-[14px] text-primary font-semibold">
+            {TeamBPercentage}
+          </div>
+          <div className="absolute justify-self-center w-[90%] bottom-0 h-3 bg-[#b3b3b3] rounded-full">
+            <div
+              className="absolute bottom-0 right-1/2 h-3 bg-primary rounded-l-full"
+              style={{ width: `${leftWidth / 2}%` }}
+            ></div>
+            <div
+              className="absolute bottom-0  left-1/2 h-3 bg-[#15BE65] rounded-r-full"
+              style={{ width: `${rightWidth / 2}%` }}
+            ></div>
           </div>
         </div>
       </div>
