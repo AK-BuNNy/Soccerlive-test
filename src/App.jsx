@@ -57,16 +57,6 @@ const App = () => (
         <TopPlayers />
       </div>
     </div>
-    <div className={` ${styles.flexStart} lg:mx-[120px] mt-5`}>
-      <div className={`${styles.boxWidth}`}>
-        <Test TeamAPercentage={20} TeamBPercentage={80} />
-      </div>
-    </div>
-    <div className={` ${styles.flexStart} lg:mx-[120px] mt-5`}>
-      <div className={`${styles.boxWidth}`}>
-        <Standings />
-      </div>
-    </div>
   </div>
 );
 
