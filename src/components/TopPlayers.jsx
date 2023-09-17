@@ -4,8 +4,7 @@ import {playerData }from "../constants"
 
 function TopPlayers() {
   return (
-    <div className="container max-w-[392px]">
-      <div className="w-[28rem] h-[40rem] shadow-lg bg-white rounded-lg p-6 relative scroll-container">
+      <div className="container max-w-[390px] w-[28rem] h-[40rem] shadow-lg bg-white rounded-lg p-6 relative scroll-container">
         <h1 className="p-4 text-[24px] font-semibold">Top Players</h1>
         {playerData.map((player, index) => (
           <div
@@ -32,7 +31,6 @@ function TopPlayers() {
           </div>
         ))}
       </div>
-    </div>
   );
 }
 

@@ -51,7 +51,7 @@ const App = () => (
         <PositionCard />
       </div>
     </div>
-    <div className={`${styles.flexStart} mt-5 `}>
+    <div className={`${styles.flexStart} my-5 `}>
       <div className={`flex ${styles.boxWidth} lg:max-xl:px-[120px] px-[3rem] justify-between content-center`}>
         <PlayerStat />
         <TopPlayers />

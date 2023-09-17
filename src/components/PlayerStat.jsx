@@ -57,7 +57,7 @@ const PlayerStat = () => {
         ></div>
       </div>
       </div>
-      <div className="absolute w-full top-[10rem] h-[25rem] px-4  scroll-container">
+      <div className="absolute w-full top-[10rem] h-[29rem] px-4  scroll-container">
         <table className="relative w-full  flex-col">
           <thead className="sticky top-0 w-full ">
             <tr className="text-[14px]  font-normal bg-white  text-[#767379]">

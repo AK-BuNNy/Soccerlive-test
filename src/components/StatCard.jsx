@@ -12,51 +12,128 @@ import { WinPercentageBar } from ".";
 const data = [
   {
     title: 'Shots on Goal',
-    TeamAPercentage: 60, 
-    TeamBPercentage: 40, 
+    TeamAScore: 8, 
+    TeamBScore: 7, 
     leftWidth: 60, 
     rightWidth: 40, 
   },
   {
     title: 'Shots off Goal',
-    TeamAPercentage: 45, 
-    TeamBPercentage: 55, 
+    TeamAScore: 5, 
+    TeamBScore: 5, 
     leftWidth: 45, 
     rightWidth: 55, 
   },
   {
     title: 'Shots insidebox',
-    TeamAPercentage: 45, 
-    TeamBPercentage: 55, 
+    TeamAScore: 5, 
+    TeamBScore: 5, 
     leftWidth: 45, 
     rightWidth: 55, 
   },
   {
     title: 'Shots outsidebox',
-    TeamAPercentage: 45, 
-    TeamBPercentage: 55, 
+    TeamAScore: 9, 
+    TeamBScore: 10, 
     leftWidth: 45, 
     rightWidth: 55, 
   },
   {
     title: 'Total Shots',
-    TeamAPercentage: 45, 
-    TeamBPercentage: 55, 
+    TeamAScore: 6, 
+    TeamBScore: 6,
+    leftWidth: 45, 
+    rightWidth: 55, 
+  },
+  {
+    title: 'Total Shots',
+    TeamAScore: 6, 
+    TeamBScore: 6,
+    leftWidth: 45, 
+    rightWidth: 55, 
+  },
+  {
+    title: 'Total Shots',
+    TeamAScore: 6, 
+    TeamBScore: 6,
+    leftWidth: 45, 
+    rightWidth: 55, 
+  },
+  {
+    title: 'Total Shots',
+    TeamAScore: 6, 
+    TeamBScore: 6,
+    leftWidth: 45, 
+    rightWidth: 55, 
+  },
+  {
+    title: 'Shots on Goal',
+    TeamAScore: 8, 
+    TeamBScore: 7, 
+    leftWidth: 60, 
+    rightWidth: 40, 
+  },
+  {
+    title: 'Shots off Goal',
+    TeamAScore: 5, 
+    TeamBScore: 5, 
+    leftWidth: 45, 
+    rightWidth: 55, 
+  },
+  {
+    title: 'Shots insidebox',
+    TeamAScore: 5, 
+    TeamBScore: 5, 
+    leftWidth: 45, 
+    rightWidth: 55, 
+  },
+  {
+    title: 'Shots outsidebox',
+    TeamAScore: 9, 
+    TeamBScore: 10, 
+    leftWidth: 45, 
+    rightWidth: 55, 
+  },
+  {
+    title: 'Total Shots',
+    TeamAScore: 6, 
+    TeamBScore: 6,
+    leftWidth: 45, 
+    rightWidth: 55, 
+  },
+  {
+    title: 'Total Shots',
+    TeamAScore: 6, 
+    TeamBScore: 6,
+    leftWidth: 45, 
+    rightWidth: 55, 
+  },
+  {
+    title: 'Total Shots',
+    TeamAScore: 6, 
+    TeamBScore: 6,
+    leftWidth: 45, 
+    rightWidth: 55, 
+  },
+  {
+    title: 'Total Shots',
+    TeamAScore: 6, 
+    TeamBScore: 6,
     leftWidth: 45, 
     rightWidth: 55, 
   },
 ];
 
-function StatisticDiv({ title, TeamAPercentage, TeamBPercentage, leftWidth, rightWidth }) {
+function StatisticDiv({ title, TeamAScore, TeamBScore, leftWidth, rightWidth }) {
   return (
-    <div className="flex flex-col w-[22rem] px-6 mt-4 justify-between items-center h-[3rem]  ">
+    <div className="flex flex-col w-[22rem] px-6 mt-4 justify-between items-center h-[3rem]">
       <div className="text-[14px] font-bold text-primary">{title}</div>
       <div className="relative grid grid-cols-3 w-[100%] bg-slate-500">
         <div className="absolute bottom-[-4px] left-0 transform -translate-x-1/2 text-[14px] text-primary font-semibold">
-          {TeamAPercentage}
+          {TeamAScore}
         </div>
         <div className="absolute bottom-[-4px] left-full transform -translate-x-1/2 text-[14px] text-primary font-semibold">
-          {TeamBPercentage}
+          {TeamBScore}
         </div>
         <div className="absolute justify-self-center w-[90%] bottom-0 h-2 bg-[#b3b3b3] rounded-full">
           <div
@@ -88,7 +165,7 @@ const StatCard = () => {
   }, []);
 
   return (
-    <div className="relative container flex flex-col items-center min-w-[21rem] w-[392px] h-[45rem] bg-white p-2 border rounded-xl shadow-lg  ">
+    <div className="relative container flex flex-col items-center min-w-[21rem] w-[392px] h-[45rem] bg-white p-2 border rounded-xl shadow-lg scroll-container">
       <div className="  h-[10rem] mt-5 mx-1 w-full  grid grid-cols-3  ">
         <div className="col-span-1 justify-self-center flex flex-col items-center">
           <img className=" h-[3.5rem]" src={ManUnited} alt="Man United" />
@@ -105,19 +182,19 @@ const StatCard = () => {
           <h3 className="text-center font-semibold text-[#949292]">FT</h3>
         </div>
         <div className="col-span-1 justify-self-center flex flex-col items-center">
-          <img className=" h-[3.5rem]" src={ManUnited} alt="Man United" />
+          <img className=" h-[3.5rem]" src={ManCity} alt="Man United" />
           <span className="text-lg mt-2 font-semibold text-primary ">
-            Man United
+            Man City
           </span>
         </div>
       </div>
-      <div className="absolute top-[10rem] text-[1.125rem] font-bold text-primary">
+      <div className="absolute top-[10rem] text-[1.125rem] font-semibold text-primary">
         Winning Percentage?
       </div>
-      <div className="w-full px-3 mt-4">
+      <div className="absolute top-[12rem] w-full px-6 mt-4">
         <WinPercentageBar leftPercentage={46} rightPercentage={20} />
       </div>
-      <div className="relative mt-7 w-full flex flex-col items-center">
+      <div className="absolute mt-7 top-[16rem] w-full flex flex-col items-center">
         <div className="flex sm:flex-row justify-between w-full">
           {nav.map((navItem, index) => (
             <div
@@ -134,7 +211,7 @@ const StatCard = () => {
             </div>
           ))}
         </div>
-        <div className="relative  w-[90%] h-[3px] bg-gray-300 rounded">
+        <div className=" w-[90%] h-[3px] bg-gray-300 rounded">
           <div
             style={{
               position: "absolute",
@@ -152,20 +229,42 @@ const StatCard = () => {
           ></div>
         </div>
       </div>
-      <div >
+      <div className="absolute top-[22.5rem] w-full px-7">
+        <div className="items-start font-semibold text-[18px] text-primary">Statistics</div>
+        <div className="container mt-6 bg-gray-200 w-full h-[3.5625rem] rounded-md flex flex-row justify-between pt-3 px-8">
+          <div>logo1</div>
+          <div>logo2</div>
+        </div>
+      </div>
+      <div className="absolute top-[30rem]">
       {data.map((item, index) => (
         <StatisticDiv
           key={index}
           title={item.title}
-          TeamAPercentage={item.TeamAPercentage}
-          TeamBPercentage={item.TeamBPercentage}
+          TeamAScore={item.TeamAScore}
+          TeamBScore={item.TeamBScore}
           leftWidth={item.leftWidth}
           rightWidth={item.rightWidth}
         />
       ))}
     </div>
+    <div className="absolute top-[97rem] w-full px-7">
+        <div className="items-start font-semibold text-[18px] text-primary">Head to Head</div>
+        <div className="container mt-6 bg-gray-200 w-full h-[4.46806rem] rounded-md flex flex-row justify-between pt-3 px-8">
+          <div>logo1</div>
+          <div>logo2</div>
+        </div>
+        <div className="container mt-3 bg-gray-200 w-full h-[4.46806rem] rounded-md flex flex-row justify-between pt-3 px-8">
+          <div>logo1</div>
+          <div>logo2</div>
+        </div>
+        <div className="container mt-3 bg-gray-200 w-full h-[4.46806rem] rounded-md flex flex-row justify-between pt-3 px-8">
+          <div>logo1</div>
+          <div>logo2</div>
+        </div>
+      </div>
     </div>
   );
 };
- 
+
 export default StatCard;

@@ -43,12 +43,13 @@
 }
 
 .scroll-container {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Custom scrollbar container */
 .scroll-container::-webkit-scrollbar {
-  width: 8px; /* Set the width of the scrollbar */
+  width: 6px; /* Set the width of the scrollbar */
 }
 
 /* Style the scrollbar track */

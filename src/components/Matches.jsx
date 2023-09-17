@@ -1,7 +1,12 @@
 import React from "react";
-import { RightArrowWh, LeftArrowWh, DownArrowWh,ManCity,
-  ManUnited, } from "../assets";
-import {matches} from "../constants"
+import {
+  RightArrowWh,
+  LeftArrowWh,
+  DownArrowWh,
+  ManCity,
+  ManUnited,
+} from "../assets";
+import { matches } from "../constants";
 
 const Matches = () => {
   return (
@@ -25,7 +30,11 @@ const Matches = () => {
           className={`py-2 px-4 font-poppins flex font-light text-[14px] text-white bg-primarydim hover:bg-[#353B72] rounded-full `}
         >
           <span className="font-light font-sans-pro mr-3">Round 35</span>
-          <img src={DownArrowWh} alt="Arrow head Down" className="w-[10px] mt-1.5" />
+          <img
+            src={DownArrowWh}
+            alt="Arrow head Down"
+            className="w-[10px] mt-1.5"
+          />
         </button>
         <button
           className={`py-2 px-4 font-poppins flex font-light text-[14px] text-white bg-primarydim hover:bg-[#353B72] rounded-full `}
@@ -38,36 +47,50 @@ const Matches = () => {
           />
         </button>
       </div>
-      <div className="absolute top-[140px] right-0 h-[35.5rem] hidden-scrollbar">
-      {matches.map((dateItem) => (
-        <div key={dateItem.Date}>
-          <div className="w-full p-4 py-5 bg-primarydim">
-            <h1 className=" px-4  text-lg [font-family:'Source_Sans_Pro-SemiBold',_Helvetica] text-white text-[18px] font-light">
-              <span>{dateItem.Date}</span>
-            </h1>
-          </div>
-            <ul className="mb-5">
+      <div className="absolute right-0 top-[140px] h-[35.5rem] w-full hidden-scrollbar">
+        {matches.map((dateItem) => (
+          <div key={dateItem.Date} className="flex flex-col items-center justify-center" >
+            <div className=" w-full p-4 py-5 bg-primarydim">
+              <h1 className=" px-4  text-lg text-white text-[18px] font-light">
+                <span>{dateItem.Date}</span>
+              </h1>
+            </div>
+            <ul className="w-[90%]">
               {dateItem.Matches.map((match) => (
-              <li key={match.MatchID}>
-                <div className=" relative bg-white h-[6rem] mt-5 mx-4 rounded-lg grid grid-cols-3 content-center">
-                  <div className="flex justify-between ">
-                    <img className="w-12 h-12" src={match.homeLogoSrc} alt="" />
-                    <div className="text-center flex flex-row gap-3 ml-8 text-[34px]">
-                      <h1 className="font-semibold">{match.homeScore}</h1>
-                      <h1 className="text-lg text-neutral-500 mt-3">FT</h1>
-                      <h1 className="font-semibold">{match.awayScore}</h1>
+                <li key={match.MatchID}>
+                  <div className=" bg-white h-[6rem] my-5 w-full rounded-lg flex justify-center items-center">
+                    <div className="col-span-1 justify-self-center flex flex-col items-center">
+                      <img
+                        className="w-12 h-12"
+                        src={match.homeLogoSrc}
+                        alt=""
+                      />
+                      <span className="text-lg mt-2 font-semibold text-primary ">
+                        {match.homeTeam}
+                      </span>
                     </div>
-                    <img className="w-12 h-12 ml-12" src={match.awayLogoSrc} alt="" />
-                  </div>
-                  <div>
-                    <div className="flex flex-row mt-12  gap-[56px] ml-[-74px] ">
-                        <span className="font-bold">{match.homeTeam}</span>
-                        <h2>vs</h2>
-                        <span className="font-bold">{match.awayTeam}</span>
+                    <div className="col-span-1 justify-self-center">
+                      <div className=" flex flex-row gap-1 ">
+                        <h2 className="  text-primary font-sans text-[40px] font-bold">{match.homeScore}</h2>
+                        <h2 classname="text-[20px]">FT</h2>
+                        <h2 className="  text-primary font-sans text-[40px] font-bold">{match.awayScore}</h2>
+                      </div>
+                      <h3 className="text-center font-semibold text-[#949292]">
+                        vs
+                      </h3>
+                    </div>
+                    <div className="col-span-1 justify-self-center flex flex-col items-center">
+                      <img
+                        className="w-12 h-12 ml-12"
+                        src={match.awayLogoSrc}
+                        alt=""
+                      />
+                      <span className="text-lg mt-2 font-semibold text-primary ">
+                        {match.awayTeam}
+                      </span>
                     </div>
                   </div>
-                </div>
-              </li>
+                </li>
               ))}
             </ul>
           </div>
@@ -78,3 +101,26 @@ const Matches = () => {
 };
 
 export default Matches;
+
+{/* <div className="  h-[10rem] mt-5 mx-1 w-full  grid grid-cols-3  ">
+  <div className="col-span-1 justify-self-center flex flex-col items-center">
+    <img className="w-12 h-12" src={match.homeLogoSrc} alt="" />
+    <span className="text-lg mt-2 font-semibold text-primary ">
+      {match.homeTeam}
+    </span>
+  </div>
+  <div className="col-span-1 justify-self-center">
+    <div className=" flex flex-row gap-1 text-primary font-sans text-[40px] font-bold">
+      <h2>{match.homeScore}</h2>
+      <h2>vs</h2>
+      <h2>{match.awayScore}</h2>
+    </div>
+    <h3 className="text-center font-semibold text-[#949292]">FT</h3>
+  </div>
+  <div className="col-span-1 justify-self-center flex flex-col items-center">
+    <img className="w-12 h-12 ml-12" src={match.awayLogoSrc} alt="" />
+    <span className="text-lg mt-2 font-semibold text-primary ">
+      {match.awayTeam}
+    </span>
+  </div>
+</div> */}
